@@ -1,0 +1,40 @@
+#ifndef ADD_SEXAGE_H
+#define ADD_SEXAGE_H
+
+#include <QDialog>
+
+namespace Ui {
+class add_sexage;
+}
+
+class add_sexage : public QDialog
+{
+    Q_OBJECT
+    QSqlDatabase &db;    // это - наша база данных
+    exec_SQL mySQL;
+    QSettings &settings;
+    s_data_app &data_app;
+    
+    int id_assiglay;
+    int assiglay_type;
+    
+    void refresh_combo_assiglays();
+
+public:
+    explicit add_sexage(int id_assiglay, int assiglay_type, QSqlDatabase &db, s_data_app &data_app, QSettings &settings, QWidget *parent = 0);
+    ~add_sexage();
+
+private slots:
+    void on_bn_cansel_clicked();
+    
+    void on_bn_process_clicked();
+    
+    void on_rb_inko_clicked(bool checked);
+    
+    void on_rb_tfoms_clicked(bool checked);
+    
+private:
+    Ui::add_sexage *ui;
+};
+
+#endif // ADD_SEXAGE_H

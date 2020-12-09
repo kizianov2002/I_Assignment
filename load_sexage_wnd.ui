@@ -1,0 +1,613 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>load_sexage_wnd</class>
+ <widget class="QDialog" name="load_sexage_wnd">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1250</width>
+    <height>850</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Загрузка таблицы половозрастного распределения в разрезе МО от ТФОМС</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="_inko_assig_res.qrc">
+    <normaloff>:/inko_asg.bmp</normaloff>:/inko_asg.bmp</iconset>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout" stretch="0,0,0,0,1,0,0">
+   <property name="spacing">
+    <number>2</number>
+   </property>
+   <property name="topMargin">
+    <number>2</number>
+   </property>
+   <item>
+    <widget class="QFrame" name="pan_sexage_UP">
+     <property name="frameShape">
+      <enum>QFrame::Panel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <property name="leftMargin">
+       <number>2</number>
+      </property>
+      <property name="topMargin">
+       <number>2</number>
+      </property>
+      <property name="rightMargin">
+       <number>2</number>
+      </property>
+      <property name="bottomMargin">
+       <number>2</number>
+      </property>
+      <item>
+       <widget class="QLabel" name="label_3">
+        <property name="font">
+         <font>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string> Таблица половозрастного распределения застрахованных, в которую будут загружены данные от ТФОМС :  </string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="combo_sexage"/>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="Line" name="line_2">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>5</height>
+      </size>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Plain</enum>
+     </property>
+     <property name="lineWidth">
+      <number>2</number>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string> Скопируйте сюда таблицу половозрастного распределений застрахованных от ТФОМС Воронежской области.  Данные должны быть  без шапки,  без строки &quot;ВСЕГО&quot; и  без пустых строк : </string>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="label_2">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>20</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string> №              Название АПУ              численность              М 0-1              М 1-4              М 5-17              М 18-59              М 60+              Ж 0-1              Ж1-4              Ж 5-17              Ж 18-54              Ж 55+              со СНИЛС врача</string>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPlainTextEdit" name="te_data">
+     <property name="lineWrapMode">
+      <enum>QPlainTextEdit::NoWrap</enum>
+     </property>
+     <property name="plainText">
+      <string>2	БУЗ ВО &quot;Аннинская РБ&quot;	23628	84	398	1464	6934	2302	72	350	1393	5293	5338	21791
+3	БУЗ ВО &quot;Бобровская РБ&quot;	25615	64	484	1824	6715	2321	68	431	1687	6475	5546	24476
+4	БУЗ ВО &quot;Богучарская РБ&quot;	17380	105	535	1322	4815	1475	129	511	1142	4047	3299	16147
+5	БУЗ ВО &quot;Борисоглебская РБ&quot;	21680	126	656	1348	5620	1889	117	660	1274	5311	4679	20960
+6	БУЗ ВО &quot;Бутурлиновская РБ&quot;	21801	74	347	1213	6484	2033	72	295	1160	5518	4605	21423
+7	БУЗ ВО &quot;Верхнемамонская РБ&quot;	10116	35	217	673	2781	1174	35	191	680	2039	2291	9867
+8	БУЗ ВО &quot;Верхнехавская РБ&quot;	6085	24	158	356	2079	522	21	145	353	1316	1111	6066
+9	БУЗ ВО &quot;Воробьевская РБ&quot;	7728	27	110	477	2405	795	20	85	442	1655	1712	7651
+10	БУЗ ВО &quot;Грибановская РБ&quot;	9656	55	193	570	2574	1035	49	181	533	2005	2461	9648
+11	БУЗ ВО &quot;Калачеевская РБ&quot;	21298	73	311	1257	6067	2269	82	308	1299	4827	4805	20395
+12	БУЗ ВО &quot;Каменская РБ&quot; 	10797	44	179	677	3099	1107	25	176	692	2439	2359	10622
+13	БУЗ ВО &quot;Кантемировская РБ&quot;	17665	86	402	1338	4843	1602	84	350	1246	4030	3684	17639
+14	БУЗ ВО &quot;Каширская РБ&quot;	13957	38	287	906	3992	1302	37	293	924	3131	3047	13581
+15	БУЗ ВО &quot;Лискинская РБ&quot;	51930	184	1428	4509	12892	4431	152	1350	4179	12249	10556	51922
+16	БУЗ ВО &quot;Нижнедевицкая РБ&quot;	5194	44	104	279	1477	521	30	100	245	1115	1279	5181
+17	БУЗ ВО &quot;Новоусманская РБ&quot;	18848	184	620	1252	5521	1365	170	600	1121	4893	3122	16921
+18	БУЗ ВО &quot;Новохоперская РБ&quot;	4990	68	162	369	1501	366	60	147	361	1127	829	4989
+19	БУЗ ВО &quot;Ольховатская РБ&quot;	10711	78	228	776	2893	1020	65	240	728	2358	2325	10676
+20	БУЗ ВО &quot;Острогожская РБ&quot;	30122	104	570	1872	7638	2861	101	551	1804	8053	6568	28879
+21	БУЗ ВО &quot;Павловская РБ&quot;	28302	151	646	2019	7561	2606	134	637	1862	6726	5960	28229
+22	БУЗ ВО &quot;Панинская РБ&quot;	2092	12	47	110	837	144	5	64	97	513	263	2066
+23	БУЗ ВО &quot;Петропавловская РБ&quot;	9169	24	147	610	2473	1031	37	147	600	1884	2216	8995
+24	БУЗ ВО &quot;Поворинская РБ&quot;	11382	44	273	961	2820	892	45	243	908	2824	2372	11103
+25	БУЗ ВО &quot;Подгоренская РБ&quot;	12099	54	292	890	3046	1177	48	272	919	2757	2644	11819
+26	БУЗ ВО &quot;Рамонская РБ&quot;	4818	86	221	220	1606	341	86	211	214	1170	663	4754
+27	БУЗ ВО &quot;Репьевская РБ&quot;	683	8	24	32	276	35	8	20	39	183	58	592
+28	БУЗ ВО &quot;Россошанская РБ&quot;	48701	254	1297	3905	13165	3839	251	1250	3615	12228	8897	48675
+29	БУЗ ВО &quot;Семилукская РБ им. А.В. Гончарова&quot;	17482	66	417	1084	5511	1478	83	432	1021	4292	3098	17051
+30	БУЗ ВО &quot;Таловская РБ&quot;	8262	38	170	528	2396	794	35	183	472	1924	1722	7982
+31	БУЗ ВО &quot;Терновская РБ&quot;	5710	29	104	393	1668	514	22	93	317	1313	1257	5263
+32	БУЗ ВО &quot;Хохольская РБ&quot;	2215	10	65	112	944	158	11	61	96	492	266	2155
+33	БУЗ ВО &quot;Эртильская РБ&quot;	725	4	14	25	358	22	13	18	32	183	56	716
+34	ФГБУЗ &quot;МСЧ № 33 ФМБА РОССИИ&quot;	10292	26	238	694	2378	908	41	238	704	2462	2603	10151
+35	БУЗ ВО &quot;ВГП №1&quot;	70822	323	1699	3736	21451	3699	304	1527	3594	24834	9655	70686
+36	БУЗ ВО &quot;ВГП № 3&quot;	80569	535	2992	5537	20610	5482	483	2814	5484	21725	14907	78269
+37	БУЗ ВО &quot;ВГКП № 4&quot;	84197	455	2338	7217	20823	6062	423	2174	6866	23877	13962	84177
+38	БУЗ ВО &quot;ВГП № 7&quot;	102102	547	2976	7884	24313	7325	538	2694	7421	27516	20888	101965
+39	БУЗ ВО &quot;ВГП № 10&quot;	58521	266	1496	3910	15224	5056	221	1377	3696	14741	12534	53564
+40	БУЗ ВО &quot;ВГП № 18&quot;	41067	166	931	2196	11494	3343	179	844	2047	11290	8577	40448
+41	БУЗ ВО &quot;ВГП № 22&quot;	9833	45	314	797	2617	684	29	299	729	2599	1720	9829
+42	БУЗ ВО &quot;ВГБ № 4&quot;	9944	66	413	805	2481	644	67	399	766	2561	1742	9719
+43	БУЗ ВО &quot;ВГБ № 5&quot;	23469	213	1216	3384	4198	1483	177	1125	3133	4569	3971	23399
+44	БУЗ ВО &quot;ВГКБ № 11&quot;	57954	411	2531	5737	12229	4024	384	2404	5349	13827	11058	57926
+45	БУЗ ВО &quot;ВГБ № 14&quot;	5039	14	94	325	1305	464	13	99	350	1178	1197	5036
+46	БУЗ ВО &quot;ВГБ №16&quot;	44516	148	783	2017	12051	4442	137	757	1938	11380	10863	44491
+47	БУЗ ВО &quot;ВГКБ № 20&quot;	10919	3	3	0	3111	1230	4	0	0	3427	3141	10909
+48	БУЗВО &quot;ВОКБ №2&quot;	3978	7	34	131	544	563	8	42	132	1172	1345	3958
+49	ФГБУЗ &quot;МСЧ № 97 ФМБА России&quot;	7524	0	0	0	2285	1357	0	0	0	1726	2156	7518
+50	ФКУЗ &quot;МСЧ МВД России по Воронежской области&quot;	4236	0	0	0	1752	790	0	0	0	872	822	4151
+51	НУЗ &quot;Дорожная клиническая больница на ст.Воронеж-1	45306	9	2	13	15389	5044	8	1	17	13396	11427	45286
+52	НУЗ &quot;Отделенческая больница на ст. Лиски ОАО &quot;РЖД&quot;	11933	0	0	48	5214	1345	0	0	25	3077	2224	11933
+</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="Line" name="line">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>5</height>
+      </size>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Plain</enum>
+     </property>
+     <property name="lineWidth">
+      <number>2</number>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QFrame" name="frame_4">
+     <property name="minimumSize">
+      <size>
+       <width>38</width>
+       <height>38</height>
+      </size>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::Panel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_5">
+      <property name="spacing">
+       <number>2</number>
+      </property>
+      <property name="leftMargin">
+       <number>2</number>
+      </property>
+      <property name="topMargin">
+       <number>2</number>
+      </property>
+      <property name="rightMargin">
+       <number>2</number>
+      </property>
+      <property name="bottomMargin">
+       <number>2</number>
+      </property>
+      <item>
+       <widget class="QPushButton" name="bn_process">
+        <property name="minimumSize">
+         <size>
+          <width>140</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="palette">
+         <palette>
+          <active>
+           <colorrole role="Button">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>255</red>
+              <green>255</green>
+              <blue>127</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </active>
+          <inactive>
+           <colorrole role="Button">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>255</red>
+              <green>255</green>
+              <blue>127</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </inactive>
+          <disabled>
+           <colorrole role="Button">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>255</red>
+              <green>255</green>
+              <blue>127</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </disabled>
+         </palette>
+        </property>
+        <property name="font">
+         <font>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Загрузка данных
+от ТФОМС</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_8">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QFrame" name="pan_wait">
+        <property name="minimumSize">
+         <size>
+          <width>380</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>32</height>
+         </size>
+        </property>
+        <property name="palette">
+         <palette>
+          <active>
+           <colorrole role="WindowText">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>0</red>
+              <green>0</green>
+              <blue>255</blue>
+             </color>
+            </brush>
+           </colorrole>
+           <colorrole role="Text">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>0</red>
+              <green>170</green>
+              <blue>0</blue>
+             </color>
+            </brush>
+           </colorrole>
+           <colorrole role="ButtonText">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>0</red>
+              <green>170</green>
+              <blue>0</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </active>
+          <inactive>
+           <colorrole role="WindowText">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>0</red>
+              <green>0</green>
+              <blue>255</blue>
+             </color>
+            </brush>
+           </colorrole>
+           <colorrole role="Text">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>0</red>
+              <green>170</green>
+              <blue>0</blue>
+             </color>
+            </brush>
+           </colorrole>
+           <colorrole role="ButtonText">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>0</red>
+              <green>170</green>
+              <blue>0</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </inactive>
+          <disabled>
+           <colorrole role="WindowText">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>106</red>
+              <green>104</green>
+              <blue>100</blue>
+             </color>
+            </brush>
+           </colorrole>
+           <colorrole role="Text">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>106</red>
+              <green>104</green>
+              <blue>100</blue>
+             </color>
+            </brush>
+           </colorrole>
+           <colorrole role="ButtonText">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>106</red>
+              <green>104</green>
+              <blue>100</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </disabled>
+         </palette>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::Box</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Plain</enum>
+        </property>
+        <property name="lineWidth">
+         <number>3</number>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_4">
+         <property name="spacing">
+          <number>2</number>
+         </property>
+         <property name="leftMargin">
+          <number>2</number>
+         </property>
+         <property name="topMargin">
+          <number>5</number>
+         </property>
+         <property name="rightMargin">
+          <number>2</number>
+         </property>
+         <property name="bottomMargin">
+          <number>5</number>
+         </property>
+         <item>
+          <widget class="QLabel" name="lab_wait">
+           <property name="palette">
+            <palette>
+             <active>
+              <colorrole role="WindowText">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>0</red>
+                 <green>0</green>
+                 <blue>0</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Text">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>0</red>
+                 <green>0</green>
+                 <blue>0</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="ButtonText">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>0</red>
+                 <green>0</green>
+                 <blue>0</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </active>
+             <inactive>
+              <colorrole role="WindowText">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>0</red>
+                 <green>0</green>
+                 <blue>0</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Text">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>0</red>
+                 <green>0</green>
+                 <blue>0</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="ButtonText">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>0</red>
+                 <green>0</green>
+                 <blue>0</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </inactive>
+             <disabled>
+              <colorrole role="WindowText">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>106</red>
+                 <green>104</green>
+                 <blue>100</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Text">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>106</red>
+                 <green>104</green>
+                 <blue>100</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="ButtonText">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>106</red>
+                 <green>104</green>
+                 <blue>100</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </disabled>
+            </palette>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>10</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>-//-</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_6">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <property name="spacing">
+         <number>2</number>
+        </property>
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <spacer name="verticalSpacer_3">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>2</width>
+            <height>2</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QPushButton" name="bn_cansel">
+          <property name="text">
+           <string> Отмена </string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="_inko_assig_res.qrc"/>
+ </resources>
+ <connections/>
+</ui>

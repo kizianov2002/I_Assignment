@@ -1,0 +1,16 @@
+<RCC>
+    <qresource prefix="/">
+        <file>refresh.png</file>
+        <file>change.bmp</file>
+        <file>clear.bmp</file>
+        <file>pause.png</file>
+        <file>stop.png</file>
+        <file>start.png</file>
+        <file>start_off.png</file>
+        <file>pause_off.png</file>
+        <file>stop_off.png</file>
+        <file>moon.png</file>
+        <file>sun.png</file>
+        <file>inko_asg.bmp</file>
+    </qresource>
+</RCC>
